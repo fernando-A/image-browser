@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary-color-txt: #0b2239;
+    --secondary-color-txt: #374957;
+    --primary-color: #2bc48a;
+    --primary-color-hover: #4ad2959e;
+}
+
+
+.txt-title{
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-color);
+}
+.txt-p{
+    font-size: 18px;
+    padding: 0 30px;
+    color: var(--secondary-color-txt);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.row{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.j-center{
+    justify-content: center;
+    display: flex;
+}
+.c-pointer{
+    cursor: pointer;
+}
+
+
+
+// margin
+
+
+.m-b-30{
+    margin-bottom: 30px;
+}
+.m-t-30{
+    margin-top: 30px;
+}
+.m-b-5{
+    margin-bottom: 5px;
+}
+

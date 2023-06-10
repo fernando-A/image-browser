@@ -1,0 +1,39 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="txt-title m-b-30 m-t-30">Image search engine</h1>
+            <div class="content-searcher j-center">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{txtDropSelect}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <button class="dropdown-item text-center" 
+                            *ngFor="let item of arrDrop"
+                            (click)="filterDrop(item.text)">{{item.text ===  0 ? "All" : item.text}}</button>
+                    </div>
+                </div>
+                <input class="input-search m-b-30"
+                [(ngModel)]="valSearch"
+                (keyup)="filterImg()"
+                placeholder="Search">
+                <button type="button" class="btn btn-primary btn-add" (click)="openModal()">ADD</button>
+            </div>
+        </div>
+    </div>
+    <app-image-gallery  [images]=images ></app-image-gallery>
+
+    <div class="row" *ngIf="txtDropSelect !==  'Pagination by All'">
+        <div class="col-12 j-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link c-pointer" (click)="nextPagePreNex(0)">Previous</a></li>
+                    <li class="page-item" *ngFor="let item of [].constructor(numbPaer); let i = index"><a class="page-link c-pointer" [ngClass]="{'color-p-s' : selectNumberPage === i+1 }" (click)="nextPage(i+1)">{{i+1}}</a></li>
+                    <li class="page-item"><a class="page-link c-pointer" (click)="nextPagePreNex(1)">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<app-add-generic *ngIf="showModal"  (clossMOdalEmit)="closeModal($event)" (saveCharacter)="saveCharacter($event)"></app-add-generic>

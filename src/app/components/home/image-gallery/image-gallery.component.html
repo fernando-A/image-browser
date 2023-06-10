@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12 col-xl-3 j-center m-b-30" *ngFor="let item of images">
+        <div class="pill-card">
+            <div class="col-12">
+                <img (click)="openModal(item.id)" [src]="item.image" alt="">
+            </div>
+            <div class="col-12 w-1">
+                <h4 class="txt-title text-center p-info">{{item.name | uppercase}}</h4>
+                <h5 class="txt-title text-center">{{item.gender | titlecase}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<app-character-information *ngIf="showModal" [infoCharacter]="selectCharacter" (clossMOdalEmit)="closeModal($event)"></app-character-information>
+

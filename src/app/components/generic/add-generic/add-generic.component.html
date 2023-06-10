@@ -1,0 +1,42 @@
+<div class="container-modal" [ngClass]="addClassOpacity">
+    <div class="modalbox" [ngClass]="addClassTans">
+        <div class="row">
+            <div class="col-12 justify-end">
+                <h2 (click)="closeModal()" class="c-pointer">X</h2>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-6 text-center">
+                <input type="file" (change)="captureFile($event)">
+                <img *ngIf="prevImg" [src]="prevImg">
+                <h3 *ngIf="errorImg">Please add a picture</h3>
+            </div>
+            <div class="col-6 info-character text-center">
+                <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+                    <div>
+                        <input class="input-text m-b-5" placeholder="Name" id="name" type="text" formControlName="name">
+                    </div>
+                    <div>
+                        <input class="input-text m-b-5" placeholder="Homeworld" id="homeworld" type="text" formControlName="homeworld">
+                    </div>                
+                    <div>
+                        <input class="input-text m-b-5" placeholder="Gender" id="gender" type="text" formControlName="gender">
+                    </div>
+                    <div>
+                        <input class="input-text m-b-5" placeholder="Species" id="species" type="text" formControlName="species">
+                    </div>
+                    <div>
+                        <input class="input-text m-b-5" placeholder="Born" id="born" type="text" formControlName="born">
+                    </div>
+                    <div>
+                        <input class="input-text m-b-5" placeholder="Died" id="died" type="text" formControlName="died">
+                    </div>
+                
+                    <button [disabled]="formGroup.invalid" class="btn btn-primary btn-add" type="submit">ADD</button>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

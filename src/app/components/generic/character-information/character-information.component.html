@@ -1,0 +1,23 @@
+<div class="container-modal" [ngClass]="addClassOpacity">
+    <div class="modalbox" [ngClass]="addClassTans">
+        <div class="row">
+            <div class="col-12 justify-end">
+                <h2 (click)="closeModal()" class="c-pointer">X</h2>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-6 text-center">
+                <img [src]="infoCharacter[0].image" alt="">
+            </div>
+            <div class="col-6 info-character text-center">
+
+                <h2 class="txt-title">{{infoCharacter[0].name}}</h2>
+                <h4>Gender: {{infoCharacter[0].gender}}</h4>
+                <h4>Homeworld: {{infoCharacter[0].homeworld}}</h4>
+                <h4>Species: {{infoCharacter[0].species}}</h4>
+                <h4>Born: {{infoCharacter[0].born}}</h4>
+                <h4>Died: {{infoCharacter[0].died}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
